@@ -1,0 +1,47 @@
+$body-color: hsla(30, 8%, 5%, 1);
+$p-color: #111;
+$no-decor: none;
+$no-list: none;
+$reg-weight: 300;
+$hidden-flow: hidden;
+$smooth-scroll: smooth;
+$poppins-font: "Poppins", sans-serif;
+$p-0: 0;
+$m-0: 0;
+$box-border: border-box;
+
+body {
+  color: $body-color;
+}
+
+* {
+  padding: $p-0;
+  margin: $m-0;
+  box-sizing: $box-border;
+  font-family: $poppins-font;
+}
+
+html {
+  scroll-behavior: $smooth-scroll;
+}
+
+.main {
+  overflow: $hidden-flow;
+}
+
+body {
+  background-color: $body-color;
+}
+
+p {
+  font-weight: $reg-weight;
+  color: $p-color;
+}
+
+ul {
+  list-style: $no-list;
+}
+
+a {
+  text-decoration: $no-decor;
+}

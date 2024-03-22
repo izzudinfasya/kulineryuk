@@ -1,0 +1,188 @@
+/* Responsive */
+@media screen and (max-width: 340px) {
+  .nav_logo {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    margin-inline: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav_logo {
+    font-size: 1.5rem;
+  }
+
+  .modal-content {
+    min-width: 50%;
+  }
+
+  .detail-info .description {
+    max-width: 800px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .listRestaurants {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .nav_logo {
+    font-size: 1.5rem;
+  }
+
+  .hero .content h2 {
+    font-size: 2.5rem;
+  }
+
+  .search-box {
+    width: 450px;
+  }
+
+  .modal-content {
+    min-width: 40%;
+  }
+
+  .hero_image {
+    min-height: 50vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav_logo {
+    font-size: 1.75rem;
+  }
+
+  .hero .content h2 {
+    font-size: 3rem;
+  }
+
+  .search-box {
+    width: 500px;
+  }
+
+  .listRestaurants {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .review-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .row {
+    padding: 5px 20px;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .nav_close,
+  .nav_toggle {
+    display: none;
+  }
+
+  .nav_list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+
+  .nav_logo {
+    font-size: 1.8rem;
+  }
+
+  .modal-content {
+    min-width: 20%;
+  }
+
+  .detail-info {
+    margin: 20px auto;
+    text-align: left;
+  }
+  .detail-info .plot {
+    margin-left: 0;
+  }
+  .detail-info .writer {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .detail-poster img {
+    min-height: 100vh;
+  }
+
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .listRestaurants {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .detail-info .description {
+    max-width: 400px;
+  }
+
+  .detail-info .menu {
+    max-width: 400px;
+  }
+
+  .review-container {
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1152px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(3.5rem + 1.5rem);
+  }
+
+  .nav_logo {
+    font-size: 2rem;
+  }
+
+  .search-box {
+    width: 600px;
+  }
+
+  .row {
+    padding: 10px 20px;
+  }
+
+  .hero .content h2 {
+    font-size: 4rem;
+  }
+
+  .headline-1 {
+    font-size: 3rem;
+    color: #fff;
+  }
+
+  .listRestaurants {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero_image {
+    min-height: 100vh;
+    aspect-ratio: 16/9;
+  }
+
+  .hero .content {
+    max-width: 900px;
+  }
+}

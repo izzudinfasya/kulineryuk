@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KulinerYUK</title>
+    <meta name="title" content="KulinerYUK" />
+    <meta
+      name="description"
+      content="Website katalog restoran untukmu, Temukan restoran favoritmu!"
+    />
+    <link rel="manifest" href="./app.webmanifest" />
+    <meta name="theme-color" content="#e4c590" />
+    <link rel="icon" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./images/icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://restaurant-api.dicoding.dev" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://use.fontawesome.com" />
+    <link rel="preload" href="images/heros/hero-image.jpg" as="image" />
+  </head>
+  <body>
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <!-- <p class="text">KulinerYUK</p> -->
+    </div>
+    <a href="#mainContent" class="skip-link" tabindex="0">Skip To Content</a>
+    <app-bar></app-bar>
+    <main id="mainContent" tabindex="0"></main>
+
+    <div class="modal" id="loading-modal">
+      <div class="modal-content">
+        <div class="loader mb-2"></div>
+        <div>Loading</div>
+      </div>
+    </div>
+
+    <footer-bar></footer-bar>
+
+    <script
+      async
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      defer
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      async
+      defer
+      src="https://use.fontawesome.com/b070c8f1df.js"
+    ></script>
+  </body>
+</html>
