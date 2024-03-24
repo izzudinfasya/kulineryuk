@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/images/(.*)", "destination": "/public/images/$1" }]
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
