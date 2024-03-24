@@ -7,7 +7,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <div class = "result-grid" id = "result-grid">
         <div class = "detail-poster">
             <img class="img-cover lazyload" crossorigin="anonymous" alt="${restaurant.name}"
-            data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
+            data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" fetchpriority="high">
         </div>
         <div class = "detail-info">
             <p class="rating"><b>Rating:</b> ${restaurant.rating}</p>
@@ -51,7 +51,7 @@ const createRestaurantItemTemplate = (restaurant) => `
                 <div class="list-card has-before hover:shine" tabindex="0">
                     <div class="card-banner img-holder">
                         <img class="img-cover lazyload" crossorigin="anonymous" alt="${restaurant.name}"
-                            data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
+                            data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" fetchpriority="high">
                             <p class="rating label-2"><ion-icon name="star" class="star">
                             </ion-icon> ${restaurant.rating}</p>
                     </div>
