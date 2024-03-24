@@ -69,16 +69,16 @@ class AppBar extends HTMLElement {
 
                 @media screen and (max-width: 1023px) {
                     .nav_menu {
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        background-color: hsla(0, 0%, 0%, 0.3);
-                        width: 100%;
-                        padding-block: 4rem;
-                        backdrop-filter: blur(24px);
-                        -webkit-backdrop-filter: blur(24px);
-                        transform: translateY(-100%);
-                        transition: transform 0.4s ease;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background-color: hsla(0, 0%, 0%, 0.3);
+                    width: 100%;
+                    padding-block: 4rem;
+                    backdrop-filter: blur(24px);
+                    -webkit-backdrop-filter: blur(24px);
+                    transform: translateY(-100%);
+                    transition: transform 0.4s ease;
                     }
                 }
 
@@ -118,7 +118,7 @@ class AppBar extends HTMLElement {
 
                 /* Show menu  */
                 .show-menu {
-                    top: 0;
+                    transform: translateY(0%);
                 }
 
                 /* Blur  */
@@ -203,7 +203,7 @@ class AppBar extends HTMLElement {
                     <div class="nav_menu" id="nav-menu">
                         <ul class="nav_list">
                             <li class="nav_item">
-                            <a href="#/home" class="nav_link active-link">Home</a>
+                            <a href="#/home" class="nav_link">Home</a>
                             </li>
                             <li class="nav_item">
                             <a href="#/favorite" class="nav_link">Favorite</a>
