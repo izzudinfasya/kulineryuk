@@ -57,26 +57,49 @@ const Home = {
     },
 
     async afterRender() {
-        const data = await RestoSource.listRestaurant();
-        const { restaurants } = data;
-        const restaurantContainer = document.querySelector('#listRestaurants');
-        restaurants.forEach((restaurant) => {
-            restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+        function openModal() {
+            modal.style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Modal Error
+        const errorModal = document.getElementById('error-modal');
+        const errorMessage = document.getElementById('error-message');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        function showErrorModal(message) {
+            errorMessage.textContent = message;
+            errorModal.style.display = 'block';
+        }
+
+        closeBtn.addEventListener('click', () => {
+            errorModal.style.display = 'none';
         });
 
-        // Get Hero Image
-        // const heroImage = document.querySelector('.hero_image');
-        // heroImage.classList.add('lazyload');
-        // const heroImageUrl = 'images/heros/hero-image.jpg';
-        // fetch(heroImageUrl)
-        //     .then((response) => response.blob())
-        //     .then((blob) => {
-        //         const url = URL.createObjectURL(blob);
-        //         document.querySelector('.hero_image').style.backgroundImage = `url(${url})`;
-        //     })
-        //     .catch((error) => {
-        //         console.error('Error loading hero image:', error);
-        //     });
+        window.addEventListener('click', (event) => {
+            if (event.target === errorModal) {
+                errorModal.style.display = 'none';
+            }
+        });
+
+        openModal();
+        try {
+            const data = await RestoSource.listRestaurant();
+            const { restaurants } = data;
+            const restaurantContainer = document.querySelector('#listRestaurants');
+            restaurants.forEach((restaurant) => {
+                restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+            });
+        } catch (error) {
+            const customErrorMessage = 'Yahh.. restoran gagal dimuat, Silahkan coba lagi';
+            showErrorModal(customErrorMessage);
+        } finally {
+            closeModal();
+        }
 
         // Mendapatkan elemen gambar
         const img = document.querySelector('img');
@@ -127,26 +150,6 @@ const Home = {
                 console.error('Error loading separator:', error);
             });
 
-        // Modal Error
-        const errorModal = document.getElementById('error-modal');
-        const errorMessage = document.getElementById('error-message');
-        const closeBtn = document.getElementsByClassName('close')[0];
-
-        function showErrorModal(message) {
-            errorMessage.textContent = message;
-            errorModal.style.display = 'block';
-        }
-
-        closeBtn.addEventListener('click', () => {
-            errorModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === errorModal) {
-                errorModal.style.display = 'none';
-            }
-        });
-
         // Get Result and Input Box
         const resultBox = document.querySelector('.result-box');
         const inputBox = document.getElementById('input-box');
@@ -154,15 +157,6 @@ const Home = {
         function selectInput(list) {
             inputBox.value = list.textContent.trim();
             resultBox.innerHTML = '';
-        }
-
-        function openModal() {
-            modal.style.display = 'block';
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            modal.style.display = 'none';
         }
 
         function displayRestoList(result) {
